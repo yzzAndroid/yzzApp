@@ -15,8 +15,18 @@
         >
 
     </android.support.v7.widget.Toolbar>
-    <WebView
+
+    <ProgressBar
         android:layout_below="@id/web_toolbar"
+        android:id="@+id/web_progress"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:backgroundTint="@color/Them"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        />
+
+    <WebView
+        android:layout_below="@id/web_progress"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/web"
@@ -96,5 +106,6 @@
             android:background="@color/Them"
             />
     </LinearLayout>
+
 
 </RelativeLayout>
