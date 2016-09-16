@@ -1,6 +1,6 @@
 package com.qianfeng.yyz.shoppingproject.utils;
 
-import android.app.Activity;
+
 import android.content.Context;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
