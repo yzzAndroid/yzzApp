@@ -15,6 +15,7 @@ import com.qianfeng.yyz.shoppingproject.adapter.MyInfoAdapter;
 import com.qianfeng.yyz.shoppingproject.bean.InfoGoods;
 import com.qianfeng.yyz.shoppingproject.callback.InfoTextCallBack;
 import com.qianfeng.yyz.shoppingproject.task.MyInfoTask;
+import com.qianfeng.yyz.shoppingproject.utils.Utils;
 
 public class InfoGoodsActivity extends AppCompatActivity {
 
@@ -27,6 +28,8 @@ public class InfoGoodsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_goods);
+
+        Utils.setBarColor(this);
         //配置Toolbar
         toolbar = (Toolbar) findViewById(R.id.info_toolbar);
         toolbar.setTitle("列表详情");

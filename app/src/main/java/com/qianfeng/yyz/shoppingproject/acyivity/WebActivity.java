@@ -27,6 +27,7 @@ import com.qianfeng.yyz.shoppingproject.bean.Collects;
 import com.qianfeng.yyz.shoppingproject.contants.Contants;
 import com.qianfeng.yyz.shoppingproject.fragment.MyCollectFragment;
 import com.qianfeng.yyz.shoppingproject.save.SaveCollects;
+import com.qianfeng.yyz.shoppingproject.utils.Utils;
 import com.squareup.picasso.Picasso;
 
 public class WebActivity extends AppCompatActivity {
@@ -48,7 +49,7 @@ public class WebActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
-
+        Utils.setBarColor(this);
         //获取屏幕的宽度
         metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);

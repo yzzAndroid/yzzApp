@@ -24,6 +24,7 @@ import com.qianfeng.yyz.shoppingproject.fragment.MainFragment;
 import com.qianfeng.yyz.shoppingproject.fragment.MyCarFragment;
 import com.qianfeng.yyz.shoppingproject.fragment.MyCollectFragment;
 import com.qianfeng.yyz.shoppingproject.fragment.NavigationFragment;
+import com.qianfeng.yyz.shoppingproject.utils.Utils;
 
 
 public class MainActivity extends AppCompatActivity implements InitBallTitleCallback ,UpdateContentCallback{
@@ -54,6 +55,9 @@ public class MainActivity extends AppCompatActivity implements InitBallTitleCall
         );
        drawerLayout.addDrawerListener(actionBarDrawerToggle);
        actionBarDrawerToggle.syncState();
+
+        Utils.setBarColor(this);
+
     }
 
     @Override
@@ -65,12 +69,12 @@ public class MainActivity extends AppCompatActivity implements InitBallTitleCall
     long time = 0;
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        Log.e("=11===","=down=");
-        if (time==0){
+
+        if (time==0&&keyCode==KeyEvent.KEYCODE_BACK){
             time = System.currentTimeMillis();
             Toast.makeText(MainActivity.this, "再按一次退出", Toast.LENGTH_SHORT).show();
             return false;
-        }else {
+        }else if (keyCode==KeyEvent.KEYCODE_BACK){
             long timeNow = System.currentTimeMillis();
             if ((timeNow-time)<2000){
                 return super.onKeyDown(keyCode, event);
