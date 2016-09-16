@@ -14,6 +14,7 @@ import com.qianfeng.yyz.shoppingproject.adapter.MyCollectsAdapter;
 import com.qianfeng.yyz.shoppingproject.callback.InitBallTitleCallback;
 import com.qianfeng.yyz.shoppingproject.contants.Contants;
 import com.qianfeng.yyz.shoppingproject.save.SaveCollects;
+import com.qianfeng.yyz.shoppingproject.utils.Utils;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,6 +48,7 @@ public class MyCollectFragment extends Fragment {
                 SaveCollects.getInstance(getActivity(),Contants.TB_NAME).querry());
         listView.setAdapter(myCollectsAdapter);
 
+        Utils.addViewToEmptyList(listView,getActivity(),"暂无数据");
         initBallTitleCallback.setTextListener("我的收藏");
         return view;
     }
