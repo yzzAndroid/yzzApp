@@ -27,6 +27,7 @@ import com.qianfeng.yyz.shoppingproject.callback.CallbackBuyCar;
 import com.qianfeng.yyz.shoppingproject.callback.InitBallTitleCallback;
 import com.qianfeng.yyz.shoppingproject.contants.Contants;
 import com.qianfeng.yyz.shoppingproject.save.SaveCollects;
+import com.qianfeng.yyz.shoppingproject.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,14 +93,7 @@ public class MyCarFragment extends Fragment implements CallbackBuyCar{
         setListener();
 
         //给list设置空的视图
-        TextView textView = new TextView(getActivity());
-        ViewGroup viewGroup = (ViewGroup) listView.getParent();
-        viewGroup.addView(textView);
-        textView.setText("暂无记录");
-        textView.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
-        textView.setGravity(Gravity.CENTER);
-        textView.setTextSize(30);
-        listView.setEmptyView(textView);
+        Utils.addViewToEmptyList(listView,getActivity(),"暂无记录");
 
         return view;
     }
