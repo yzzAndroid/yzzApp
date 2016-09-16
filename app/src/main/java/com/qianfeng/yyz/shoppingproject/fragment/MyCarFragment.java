@@ -2,6 +2,7 @@ package com.qianfeng.yyz.shoppingproject.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -87,7 +88,7 @@ public class MyCarFragment extends Fragment implements CallbackBuyCar{
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 clickView = view;
-                return false;
+                return true;
             }
         });
         setListener();
