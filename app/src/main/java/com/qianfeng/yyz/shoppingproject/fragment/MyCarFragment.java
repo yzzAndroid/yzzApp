@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -88,6 +90,16 @@ public class MyCarFragment extends Fragment implements CallbackBuyCar{
             }
         });
         setListener();
+
+        //给list设置空的视图
+        TextView textView = new TextView(getActivity());
+        ViewGroup viewGroup = (ViewGroup) listView.getParent();
+        viewGroup.addView(textView);
+        textView.setText("暂无记录");
+        textView.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+        textView.setGravity(Gravity.CENTER);
+        textView.setTextSize(30);
+        listView.setEmptyView(textView);
 
         return view;
     }
