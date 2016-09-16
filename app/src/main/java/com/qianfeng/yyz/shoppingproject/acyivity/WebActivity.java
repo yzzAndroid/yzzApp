@@ -71,7 +71,7 @@ public class WebActivity extends AppCompatActivity {
         sweb_name = intent.getStringExtra("name");
         sweb_price = intent.getStringExtra("price");
         webView.loadUrl(path);
-        collects = new Collects(count*Double.valueOf(sweb_price),sweb_name,count,Double.valueOf(sweb_price),pUrl);
+        collects = new Collects(((int)(count*Double.valueOf(sweb_price)*100))/100.00,sweb_name,count,Double.valueOf(sweb_price),pUrl);
         //数据库
         int count = SaveCollects.getInstance(this, Contants.TB_NAME).querry(collects).getCount();
         if (count>0){
@@ -190,7 +190,7 @@ public class WebActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (count>0){
-                    collects = new Collects(count*Double.valueOf(sweb_price),sweb_name,count,Double.valueOf(sweb_price),pUrl);
+                    collects = new Collects(((int)(count*Double.valueOf(sweb_price))*100)/100.00,sweb_name,count,Double.valueOf(sweb_price),pUrl);
                     SaveCollects.getInstance(WebActivity.this,Contants.TB_NAME_CAR).loade(collects);
                     Toast.makeText(WebActivity.this, "添加成功", Toast.LENGTH_SHORT).show();
                 }
