@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,10 +16,12 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +48,8 @@ public class WebActivity extends AppCompatActivity {
     private Collects collects;
     private Toolbar toolbar;
     private TextView text_car_top;
+    private ProgressBar progressBar;
+    private Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,7 +90,20 @@ public class WebActivity extends AppCompatActivity {
 
         //出事化小圆点
         initCarTop(true);
-
+        //加进度条
+        progressBar = (ProgressBar) findViewById(R.id.web_progress);
+        progressBar.setMax(100);
+        webView.setWebChromeClient(new WebChromeClient(){
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                super.onProgressChanged(view, newProgress);
+               progressBar.setProgress(newProgress);
+                if (newProgress==100){
+                    progressBar.setVisibility(View.GONE);
+                }
+            }
+        });
+        handler.sendEmptyMessage(1);
     }
 
 
