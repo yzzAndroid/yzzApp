@@ -27,7 +27,8 @@ public class SaveCollects {
                     +Contants.NUM+" integer ,"
                     +Contants.PRICE+" real ,"
                     +Contants.MONEY+" real ,"
-                    +Contants.PURL +" text "
+                    +Contants.PURL +" text ,"
+                    +Contants.PATH +" text "
                     + ")";
 
         database.execSQL(sql);
@@ -89,9 +90,9 @@ public class SaveCollects {
     }
 
     public void insert(Collects collects){
-        Log.e("============","=============="+TB_name);
+
        Long id = database.insert(TB_name,null, loadValues(collects));
-        Log.e("=id==","=id=="+id);
+
     }
 
     public ContentValues loadValues(Collects collects){
@@ -101,6 +102,7 @@ public class SaveCollects {
         values.put(Contants.NUM,collects.getNum());
         values.put(Contants.MONEY,collects.getMoney());
         values.put(Contants.PURL,collects.getpUrl());
+        values.put(Contants.PATH,collects.getPath());
         return values;
     }
 

@@ -2,11 +2,13 @@ package com.qianfeng.yyz.shoppingproject.fragment;
 
 
 import android.content.Context;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.qianfeng.yyz.shoppingproject.R;
@@ -47,6 +49,22 @@ public class MyCollectFragment extends Fragment {
         MyCollectsAdapter myCollectsAdapter = new MyCollectsAdapter(getActivity(),
                 SaveCollects.getInstance(getActivity(),Contants.TB_NAME).querry());
         listView.setAdapter(myCollectsAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Cursor cursor = SaveCollects.getInstance(getActivity(),Contants.TB_NAME).querry();
+                Utils.toWeb(cursor,getActivity(),position);
+            }
+        });
+
 
         Utils.addViewToEmptyList(listView,getActivity(),"暂无数据");
         initBallTitleCallback.setTextListener("我的收藏");

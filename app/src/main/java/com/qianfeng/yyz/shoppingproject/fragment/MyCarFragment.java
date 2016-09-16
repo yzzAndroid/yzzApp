@@ -91,6 +91,14 @@ public class MyCarFragment extends Fragment implements CallbackBuyCar{
                 return true;
             }
         });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Cursor cursor = SaveCollects.getInstance(getActivity(),Contants.TB_NAME_CAR).querry();
+                Utils.toWeb(cursor,getActivity(),position);
+            }
+        });
+
         setListener();
 
         //给list设置空的视图
@@ -116,7 +124,7 @@ public class MyCarFragment extends Fragment implements CallbackBuyCar{
             case 1:
 
                 String name= ((TextView)clickView.findViewById(R.id.car_tv_name)).getText().toString();
-                int d = SaveCollects.getInstance(getActivity(),Contants.TB_NAME_CAR).delete(new Collects(0,name,0,0,null));
+                int d = SaveCollects.getInstance(getActivity(),Contants.TB_NAME_CAR).delete(new Collects(0,name,0,null,0,null));
                 if (d>0){
                     Toast.makeText(getActivity(), "删除成功", Toast.LENGTH_SHORT).show();
                     deleteToUpDatalist();
@@ -162,7 +170,7 @@ public class MyCarFragment extends Fragment implements CallbackBuyCar{
                     if (b){
                          numTag++;
                          name = cursor.getString(cursor.getColumnIndex(Contants.NAME));
-                        int u =  SaveCollects.getInstance(getActivity(),Contants.TB_NAME_CAR).delete(new Collects(0,name,0,0,null));
+                        int u =  SaveCollects.getInstance(getActivity(),Contants.TB_NAME_CAR).delete(new Collects(0,name,0,null,0,null));
                         tag+=u;
                     }
                 }

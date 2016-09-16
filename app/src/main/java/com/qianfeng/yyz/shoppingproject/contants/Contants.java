@@ -14,4 +14,5 @@ public class Contants {
     public static String MONEY = "money";
     public static String PURL = "purl";
     public static String TB_NAME_CAR = "car";
+    public static String PATH = "path";
 }
