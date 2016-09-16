@@ -175,12 +175,12 @@ public class MyCarAdapter extends CursorAdapter {
             num.setText(String.valueOf(count));
             textViewNum.setText("X"+String.valueOf(count));
             textViewPrice.setText("单价:"+price);
-            textViewMoney.setText("总价:"+price*count);
+            textViewMoney.setText("总价:"+((int)(price*count*100))/100.00);
         }
 
         public void saveData(final int count, double price){
             collects.setName(name);
-            collects.setMoney(count*price);
+            collects.setMoney(((int)(count*price*100))/100.00);
             collects.setNum(count);
 
             pool.execute(new Runnable() {
