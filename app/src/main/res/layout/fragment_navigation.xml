@@ -19,25 +19,25 @@
    <de.hdodenhof.circleimageview.CircleImageView
        android:layout_width="40dp"
        android:id="@+id/civ"
+       android:layout_centerHorizontal="true"
        android:layout_height="40dp"
        android:layout_marginLeft="20dp"
-       android:src="@mipmap/ic_launcher"
+       android:src="@mipmap/guide_account_nm"
        />
    <TextView
        android:id="@+id/tv_me"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_toRightOf="@id/civ"
-       android:text="444"
-       android:layout_alignTop="@id/civ"
-       android:layout_marginLeft="10dp"
+       android:layout_below="@id/civ"
+       android:text="测试用户1"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="10dp"
        />
    <ListView
-
        android:padding="20dp"
        android:id="@+id/lv_me"
        android:layout_below="@id/civ"
-       android:layout_marginTop="10dp"
+       android:layout_marginTop="20dp"
        android:layout_width="match_parent"
        android:layout_height="match_parent">
 
