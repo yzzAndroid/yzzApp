@@ -49,7 +49,6 @@ public class WebActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TextView text_car_top;
     private ProgressBar progressBar;
-    private Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,7 +102,6 @@ public class WebActivity extends AppCompatActivity {
                 }
             }
         });
-        handler.sendEmptyMessage(1);
     }
 
 
