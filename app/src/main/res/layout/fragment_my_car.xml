@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    tools:context="com.qianfeng.yyz.shoppingproject.fragment.MyCarFragment">
+
+    <ListView
+        android:id="@+id/car_lv"
+        android:layout_above="@+id/f_car_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+
+
+    <TextView
+        android:id="@+id/f_car_ll"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ff030303"
+        android:layout_above="@+id/f_car_ll1"
+        />
+
+        <LinearLayout
+            android:id="@+id/f_car_ll1"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            >
+
+
+            <CheckBox
+                android:layout_weight="1"
+                android:id="@+id/f_car_cb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="全选"
+                android:gravity="center"
+                android:checked="false" />
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#ff030303"
+                />
+
+            <Button
+                android:id="@+id/f_car_delete"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text="删除商品"
+                android:background="@color/Them"
+                android:gravity="center"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#ff030303"
+                />
+
+            <Button
+                android:background="@color/Them"
+                android:clickable="true"
+                android:text="立即购买"
+                android:gravity="center"
+                android:id="@+id/f_car_buy"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </RelativeLayout>

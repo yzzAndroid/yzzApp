@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.qianfeng.yyz.shoppingproject.acyivity.WebActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/web_toolbar"
+        android:title="商品详情"
+        app:navigationIcon="@android:drawable/ic_menu_revert"
+        >
+
+    </android.support.v7.widget.Toolbar>
+    <WebView
+        android:layout_below="@id/web_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/web"
+        android:layout_above="@+id/web_bottom_check"
+        >
+    </WebView>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/web_bottom_check"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <CheckBox
+            android:id="@+id/web_bottom_collect"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="加入收藏"
+            android:gravity="center"
+            android:button="@null"
+            android:onClick="webCollect"
+            android:background="@drawable/web_check"
+            />
+        <TextView
+            android:layout_width="1dp"
+            android:background="#ff030303"
+            android:layout_height="match_parent" />
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/web_bottom_shopping_car"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="加入购物车"
+            android:clickable="true"
+            android:button="@null"
+            android:gravity="center"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:onClick="webShoppingCar"
+            android:background="@color/Them"
+            />
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="2"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textColor="#ffffff"
+                android:id="@+id/web_bootom_car_top"
+                android:background="@drawable/web_car"
+                android:layout_marginRight="2dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="1dp"
+            android:background="#ff030303"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/web_bottom_buy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:text="立即购买"
+            android:button="@null"
+            android:gravity="center"
+            android:onClick="webBuy"
+            android:background="@color/Them"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

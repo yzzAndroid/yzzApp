@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:scaleType="centerCrop"
+        android:id="@+id/collect_image"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/ic_launcher"
+        />
+    <TextView
+        android:text="111"
+        android:id="@+id/collect_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/car_image"
+        android:layout_toRightOf="@id/collect_image"
+        />
+    <TextView
+        android:text="111"
+        android:id="@+id/collect_tv_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/collect_image"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="36dp" />
+
+        <TextView
+            android:text="111"
+            android:id="@+id/collect_tv_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/collect_image"
+            android:layout_toRightOf="@id/collect_image"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

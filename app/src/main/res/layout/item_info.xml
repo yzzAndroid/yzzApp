@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/iv_info_item"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerCrop"
+        />
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/tv_info_name"
+        android:layout_width="200dp"
+        android:gravity="center_horizontal"
+        android:layout_height="50dp"
+        android:layout_below="@id/iv_info_item"
+        android:text="444"
+        />
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_info_name"
+        android:text="￥"
+        android:textColor="#ff0000"
+        android:id="@+id/tv_info_money1"
+        android:layout_marginBottom="5dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ff0000"
+        android:layout_toRightOf="@id/tv_info_money1"
+        android:id="@+id/tv_info_money"
+        android:text="544545"
+        android:layout_alignTop="@id/tv_info_money1"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_orignal_price"
+        android:layout_toRightOf="@id/tv_info_money"
+        android:layout_alignTop="@id/tv_info_money"
+        android:text="444"
+        android:layout_marginLeft="5dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="445"
+        android:layout_marginBottom="10dp"
+        android:layout_alignTop="@id/tv_info_money"
+        android:id="@+id/info_num"
+        android:layout_marginRight="10dp"
+        />
+
+
+
+</RelativeLayout>

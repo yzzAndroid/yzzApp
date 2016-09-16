@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/WebFalse</item>
+        <item name="colorAccent">@color/WebFalse</item>
+    </style>
+
+    <style name="dialog" >
+        <item name="android:windowEnterAnimation">@anim/web_dialog</item>
+        <item name="android:windowExitAnimation">@anim/wen_dialog2</item>
+
+    </style>
+
+</resources>
