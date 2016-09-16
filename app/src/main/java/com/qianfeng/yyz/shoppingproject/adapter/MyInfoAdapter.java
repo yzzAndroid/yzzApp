@@ -1,6 +1,7 @@
 package com.qianfeng.yyz.shoppingproject.adapter;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -74,7 +75,7 @@ public class MyInfoAdapter extends BaseAdapter {
 
         viewHolder.textView3.setText("原￥:"+infoGoods.getData()
                 .getItems().get(position).getComponent().getOrigin_price());
-
+        viewHolder.textView3.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         viewHolder.textView4.setText("销量:"+infoGoods.getData()
                 .getItems().get(position).getComponent().getSales());
         return convertView;
