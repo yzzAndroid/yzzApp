@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.qianfeng.yyz.shoppingproject.acyivity.WelcomActivity">
+
+
+    <ImageView
+        android:id="@+id/w_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/guide_account_nm"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"
+        android:layout_above="@+id/w_name"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/w_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_above="@+id/w_tv"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+       />
+    <TextView
+        android:id="@+id/w_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="淘点点"
+        android:alpha="0.5"
+        android:textSize="50sp"
+        android:textStyle="italic"
+         />
+</RelativeLayout>

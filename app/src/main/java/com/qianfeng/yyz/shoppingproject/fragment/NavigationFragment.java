@@ -2,6 +2,7 @@ package com.qianfeng.yyz.shoppingproject.fragment;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
@@ -13,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.qianfeng.yyz.shoppingproject.R;
 import com.qianfeng.yyz.shoppingproject.callback.UpdateContentCallback;
@@ -29,6 +31,7 @@ public class NavigationFragment extends Fragment {
 
     private ListView listView;
     private UpdateContentCallback contentCallback;
+    private TextView textView;
     public NavigationFragment() {
         // Required empty public constructor
     }
@@ -75,6 +78,14 @@ public class NavigationFragment extends Fragment {
                contentCallback.updateCallback(position);
             }
         });
+
+
+        textView = (TextView) view.findViewById(R.id.tv_me);
+        SharedPreferences state = getActivity().getSharedPreferences("time",Context.MODE_PRIVATE);
+        SharedPreferences user = getActivity().getSharedPreferences("user",Context.MODE_PRIVATE);
+        if (state.getBoolean("state",false)){
+            textView.setText(user.getString("name",""));
+        }
         return view;
 
     }

@@ -24,6 +24,7 @@ import com.qianfeng.yyz.shoppingproject.fragment.MainFragment;
 import com.qianfeng.yyz.shoppingproject.fragment.MyCarFragment;
 import com.qianfeng.yyz.shoppingproject.fragment.MyCollectFragment;
 import com.qianfeng.yyz.shoppingproject.fragment.NavigationFragment;
+import com.qianfeng.yyz.shoppingproject.fragment.UserInfoFragment;
 import com.qianfeng.yyz.shoppingproject.utils.Utils;
 
 
@@ -111,7 +112,10 @@ public class MainActivity extends AppCompatActivity implements InitBallTitleCall
                 drawerLayout.closeDrawer(Gravity.LEFT);
                 break;
             case 3:
-
+                tran.replace(
+                        R.id.main_rl,new UserInfoFragment()
+                );
+                drawerLayout.closeDrawer(Gravity.LEFT);
                 break;
         }
         tran.commit();

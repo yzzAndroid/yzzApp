@@ -88,7 +88,7 @@ public class MyCarFragment extends Fragment implements CallbackBuyCar{
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 clickView = view;
-                return true;
+                return false;
             }
         });
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

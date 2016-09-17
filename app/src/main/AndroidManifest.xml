@@ -15,16 +15,20 @@
         <activity
             android:name=".acyivity.MainActivity"
             android:launchMode="singleTask">
+
+        </activity>
+        <activity
+            android:name=".acyivity.InfoGoodsActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".acyivity.WebActivity" />
+        <activity android:name=".acyivity.LoginActivity" />
+        <activity android:name=".acyivity.WelcomActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".acyivity.InfoGoodsActivity"
-            android:launchMode="singleTask" />
-        <activity android:name=".acyivity.WebActivity"></activity>
     </application>
 
 </manifest>
